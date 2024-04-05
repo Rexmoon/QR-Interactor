@@ -21,7 +21,7 @@ final class FirstCoordinator<R: AppRouter> {
     }
     
     private lazy var firstViewController: UIViewController = {
-        UIHostingController(rootView: FirstView())
+        UIHostingController(rootView: FirstView(router: self))
     }()
     
     private lazy var secondViewController: UIViewController = {
@@ -30,6 +30,10 @@ final class FirstCoordinator<R: AppRouter> {
     
     private lazy var thirdViewController: UIViewController = {
         UIHostingController(rootView: ThirdView())
+    }()
+    
+    private lazy var scannerView: UIViewController = {
+        UIHostingController(rootView: QRScannerView())
     }()
 }
 
@@ -44,6 +48,7 @@ extension FirstCoordinator: FirstRouter {
         switch route {
             case .showSecondView: navigationController.pushViewController(secondViewController, animated: true)
             case .showThirdView: navigationController.present(thirdViewController, animated: true)
+            case .showScannerView: navigationController.present(scannerView, animated: true)
         }
     }
     

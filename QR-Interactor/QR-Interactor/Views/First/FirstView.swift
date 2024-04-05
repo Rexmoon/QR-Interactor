@@ -7,12 +7,47 @@
 
 import SwiftUI
 
-struct FirstView: View {
+struct FirstView<R: FirstRouter>: View {
+    
+    // MARK: Properties
+    
+    private let router: R
+    
+    // MARK: Initializers
+    
+    init(router: R) {
+        self.router = router
+    }
+    
+    // MARK: View
+    
     var body: some View {
-        Text("I am the first view")
+        VStack(spacing: 50) {
+            Button {
+                router.process(route: .showSecondView)
+            } label: {
+                Text("Go to second view")
+            }
+            
+            Button {
+                router.process(route: .showThirdView)
+            } label: {
+                Text("Go to third view")
+            }
+            
+            Button {
+                router.process(route: .showScannerView)
+            } label: {
+                Text("Scan QR Code")
+            }
+        }
     }
 }
 
+// MARK: Preview
+
 #Preview {
-    FirstView()
+    let app = App()
+    let coordinator = FirstCoordinator(router: app)
+    return FirstView(router: coordinator)
 }

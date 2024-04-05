@@ -8,14 +8,21 @@
 import UIKit
 
 final class App {
+    
+    // MARK: Properties
+    
     var navigationController: UINavigationController = .init()
 }
+
+// MARK: Coordinator
 
 extension App: Coordinator {
     func start() {
         process(route: .showFirst)
     }
 }
+
+// MARK: AppRouter
 
 extension App: AppRouter {
     func process(route: AppTransition) {

@@ -10,4 +10,5 @@ import Foundation
 enum FirstTransition {
     case showSecondView
     case showThirdView
+    case showScannerView
 }

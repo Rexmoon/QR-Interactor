@@ -22,6 +22,8 @@
 		BDF724EB2BBF4E9F000B8C8F /* FirstTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF724EA2BBF4E9F000B8C8F /* FirstTransition.swift */; };
 		BDF724ED2BBF4EAC000B8C8F /* FirstRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF724EC2BBF4EAC000B8C8F /* FirstRouter.swift */; };
 		BDF724EF2BBF5037000B8C8F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF724EE2BBF5037000B8C8F /* App.swift */; };
+		BDF724F62BBF6292000B8C8F /* QRScannerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF724F52BBF6291000B8C8F /* QRScannerUIView.swift */; };
+		BDF724F82BBF6984000B8C8F /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF724F72BBF6984000B8C8F /* QRScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		BDF724EA2BBF4E9F000B8C8F /* FirstTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTransition.swift; sourceTree = "<group>"; };
 		BDF724EC2BBF4EAC000B8C8F /* FirstRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRouter.swift; sourceTree = "<group>"; };
 		BDF724EE2BBF5037000B8C8F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		BDF724F52BBF6291000B8C8F /* QRScannerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerUIView.swift; sourceTree = "<group>"; };
+		BDF724F72BBF6984000B8C8F /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		BDF724BE2BBF2F44000B8C8F /* QR-Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				BDF724F22BBF5F5C000B8C8F /* Utility */,
 				BDF724EE2BBF5037000B8C8F /* App.swift */,
 				BDF724BF2BBF2F44000B8C8F /* AppDelegate.swift */,
 				BDF724C12BBF2F44000B8C8F /* SceneDelegate.swift */,
@@ -90,9 +95,9 @@
 		BDF724D32BBF4CE5000B8C8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BDF724D62BBF4D0B000B8C8F /* Third */,
-				BDF724D52BBF4D07000B8C8F /* Second */,
 				BDF724D42BBF4CFC000B8C8F /* First */,
+				BDF724D52BBF4D07000B8C8F /* Second */,
+				BDF724D62BBF4D0B000B8C8F /* Third */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +153,31 @@
 				BDF724E02BBF4E0A000B8C8F /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BDF724F22BBF5F5C000B8C8F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BDF724F32BBF5F65000B8C8F /* ReusableComponents */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BDF724F32BBF5F65000B8C8F /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BDF724F42BBF5FAE000B8C8F /* QRScanner */,
+			);
+			path = ReusableComponents;
+			sourceTree = "<group>";
+		};
+		BDF724F42BBF5FAE000B8C8F /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				BDF724F72BBF6984000B8C8F /* QRScannerView.swift */,
+				BDF724F52BBF6291000B8C8F /* QRScannerUIView.swift */,
+			);
+			path = QRScanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +254,7 @@
 				BDF724E32BBF4E45000B8C8F /* FirstView.swift in Sources */,
 				BDF724E72BBF4E7C000B8C8F /* ThirdView.swift in Sources */,
 				BDF724DC2BBF4D5B000B8C8F /* AppRouter.swift in Sources */,
+				BDF724F82BBF6984000B8C8F /* QRScannerView.swift in Sources */,
 				BDF724E52BBF4E69000B8C8F /* SecondView.swift in Sources */,
 				BDF724DE2BBF4D86000B8C8F /* AppTransition.swift in Sources */,
 				BDF724ED2BBF4EAC000B8C8F /* FirstRouter.swift in Sources */,
@@ -232,6 +263,7 @@
 				BDF724C02BBF2F44000B8C8F /* AppDelegate.swift in Sources */,
 				BDF724DA2BBF4D21000B8C8F /* Router.swift in Sources */,
 				BDF724EB2BBF4E9F000B8C8F /* FirstTransition.swift in Sources */,
+				BDF724F62BBF6292000B8C8F /* QRScannerUIView.swift in Sources */,
 				BDF724C22BBF2F44000B8C8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +342,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -365,6 +398,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -382,6 +416,7 @@
 				INFOPLIST_FILE = "QR-Interactor/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ScanMoon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used to Scan QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -419,6 +454,7 @@
 				INFOPLIST_FILE = "QR-Interactor/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ScanMoon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used to Scan QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
