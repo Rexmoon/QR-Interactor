@@ -32,7 +32,7 @@ struct FirstView<R: FirstRouter>: View {
             Button {
                 router.process(route: .showThirdView)
             } label: {
-                Text("Go to third view")
+                Text("PR template test")
             }
             
             Button {
