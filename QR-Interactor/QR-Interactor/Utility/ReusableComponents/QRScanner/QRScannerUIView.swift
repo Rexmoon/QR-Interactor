@@ -77,10 +77,16 @@ final class QRScannerUIView: UIView {
         
         do {
             let input = try AVCaptureDeviceInput(device: device)
+            
             let output = AVCaptureMetadataOutput()
             
+            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            
             session.addInput(input)
+            
             session.addOutput(output)
+            
+            
             
             output.metadataObjectTypes = [.qr, .microQR]
             
@@ -91,12 +97,20 @@ final class QRScannerUIView: UIView {
             
             layer.addSublayer(previewLayer)
             
-            session.startRunning()
+            DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
+                session.startRunning()
+            }
         } catch {
             
             // TODO: - Handle error
             
             print(error)
         }
+    }
+}
+
+extension QRScannerUIView: AVCaptureMetadataOutputObjectsDelegate {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        printContent(output)
     }
 }
